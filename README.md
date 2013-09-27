@@ -39,7 +39,7 @@ The XML file and ticket number text file is found under the directory example.
 
 Example run output:
 
-	$ python qualysguard_remediation_ignore_non-running_kernels.py Scan_Report_exclude_non_running_kernels.xml Scan_Report_do_not_exclude_non_running_kernels.xml 
+	$ python qualysguard_remediation_ignore_non-running_kernels.py example/Scan_Report_exclude_non_running_kernels.xml example/Scan_Report_do_not_exclude_non_running_kernels.xml 
 	Total number of vulnerabilities found: 3106
 	Total number of vulnerabilities found ignoring inactive kernels: 3083
 	Number of inactive vulnerabilites found: 23
