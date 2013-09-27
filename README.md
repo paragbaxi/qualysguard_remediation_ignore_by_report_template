@@ -27,9 +27,9 @@ Below is the workflow to be able to ignore inactive kernel vulnerabilities for r
     - I recommend performing the delta on a more granular level, at the individual vulnerability per host level.
 4. Find remediation tickets corresponding to delta vulns.
 5. Important, this step is out of scope for this script. Programmatically resolve-ignore vulns with comment like, "Discovered on inactive kernel" via cron job run daily or whatever frequency.
-    - Make sure to prepend any necessary '0's in your call. For example, to view tickets from ticket # 1800 to ticket # 2800, use the following URL:
+    - Make sure to prepend any necessary '0's in your call. For example, to ignore tickets from ticket # 1800 to ticket # 2800, use the following URL:
 
-            https://qualysapi.qualys.com/msp/ticket_list.php?ticket_numbers=001800-002800
+            https://qualysapi.qualys.com/msp/ticket_edit.php?change_state=IGNORED&add_comment=Vulnerability+on+non-running+kernel.&ticket_numbers=001800-002800
 
 
 Example
@@ -41,6 +41,6 @@ Example run output:
 
 	$ python qualysguard_remediation_ignore_non-running_kernels.py example/Scan_Report_exclude_non_running_kernels.xml example/Scan_Report_do_not_exclude_non_running_kernels.xml 
 	Total number of vulnerabilities found: 3106
-	Total number of vulnerabilities found ignoring inactive kernels: 3083
-	Number of inactive vulnerabilites found: 23
-	Ticket numbers of inactive vulnerabilites found exported to inactive_kernel_ticket_numbers_20130925-105135.txt
+	Total number of vulnerabilities ignoring non-running kernels found: 3083
+	Number of vulnerabilites found on non-running kernels: 23
+	Ticket numbers of non-running kernels vulnerabilities exported to inactive_kernel_ticket_numbers_20130925-105135.txt
