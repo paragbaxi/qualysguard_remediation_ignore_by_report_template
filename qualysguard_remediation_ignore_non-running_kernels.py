@@ -56,14 +56,14 @@ for e in exclude_nonrunning_kernel_vulns:
     exclude_nonrunning_kernel_vulns_tickets.add(e.text)
 # Communicate metrics.
 print 'Total number of vulnerabilities found:', len(all_vulns_tickets)
-print 'Total number of vulnerabilities found ignoring inactive kernels:', len(exclude_nonrunning_kernel_vulns_tickets)
+print 'Total number of vulnerabilities ignoring non-running kernels found:', len(exclude_nonrunning_kernel_vulns_tickets)
 # Find delta of ticket numbers which are the tickets for non-running kernel vulns.
 nonrunning_kernel_vulns_tickets = all_vulns_tickets.difference(exclude_nonrunning_kernel_vulns_tickets)
-print 'Number of inactive vulnerabilites found:', len(nonrunning_kernel_vulns_tickets)
+print 'Number of vulnerabilites found on non-running kernels:', len(nonrunning_kernel_vulns_tickets)
 # Print ticket numbers to file.
 timestr = time.strftime("%Y%m%d-%H%M%S")
-filename = 'inactive_kernel_ticket_numbers_%s.txt' % timestr
-print 'Ticket numbers of inactive vulnerabilites found exported to %s' % filename
+filename = 'non-active_kernels_ticket_numbers_%s.txt' % timestr
+print 'Ticket numbers of non-running kernels vulnerabilities exported to %s' % filename
 # Combine all tickets with newline in between.
 output = "\n".join(i for i in nonrunning_kernel_vulns_tickets)
 with open(filename, 'w') as the_file:
