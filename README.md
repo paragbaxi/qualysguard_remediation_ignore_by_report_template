@@ -26,10 +26,10 @@ Below is the workflow to be able to ignore inactive kernel vulnerabilities for r
     - Delta vulns does not mean finding deltas at the QID level. This is making a dangerous assumption in which a QID discovered on a host's inactive kernel is also only discovered on other hosts' inactive kernels. It is very likely that this is not the case if you do not have the exact same configuration across all hosts.
     - I recommend performing the delta on a more granular level, at the individual vulnerability per host level.
 4. Find remediation tickets corresponding to delta vulns.
-5. Important, this step is out of scope for this script. Programmatically resolve-ignore vulns with comment like, "Discovered on inactive kernel" via cron job run daily or whatever frequency.
-    - Make sure to prepend any necessary '0's in your call. For example, to ignore tickets from ticket # 1800 to ticket # 2800, use the following URL:
+5. Programmatically resolve-ignore vulns with comment like, "Discovered on inactive kernel" via cron job run daily or whatever frequency.
+    - For example, to ignore tickets from ticket # 1800 to ticket # 2800, use the following URL:
 
-            https://qualysapi.qualys.com/msp/ticket_edit.php?change_state=IGNORED&add_comment=Vulnerability+on+non-running+kernel.&ticket_numbers=001800-002800
+            https://qualysapi.qualys.com/msp/ticket_edit.php?change_state=IGNORED&add_comment=Vulnerability+on+non-running+kernel.&ticket_numbers=1800-2800
 
 
 Example
