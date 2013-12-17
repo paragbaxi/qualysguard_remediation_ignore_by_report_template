@@ -70,8 +70,10 @@ The XML file and ticket number text file is found under the directory example.
 
 Example run output:
 
-	$ python qualysguard_remediation_ignore_non-running_kernels.py example/Scan_Report_exclude_non_running_kernels.xml example/Scan_Report_do_not_exclude_non_running_kernels.xml 
+	$ python qualysguard_remediation_ignore_non-running_kernels.py -A "example/Scan_Report_do_not_exclude_non_running_kernels.xml" -E "example/Scan_Report_exclude_non_running_kernels.xml" -x
 	Total number of vulnerabilities found: 3106
 	Total number of vulnerabilities ignoring non-running kernels found: 3083
 	Number of vulnerabilites found on non-running kernels: 23
-	Ticket numbers of non-running kernels vulnerabilities exported to inactive_kernel_ticket_numbers_20130925-105135.txt
+	Ticket numbers of non-running kernels vulnerabilities exported to non-active_kernels_ticket_numbers_20131216-151941.txt file.
+	Marking QualysGuard remediation tickets ignored that are linked to vulnerabilities from non-running kernels...
+	Completed.
