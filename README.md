@@ -24,7 +24,7 @@ This report_template ID should be inputted in the all_vulns_template_id & exclud
 
 ![ScreenShot](https://raw.github.com/paragbaxi/qualysguard_vm_scan_trend/master/images/screenshot-report-template-id.png)
 
-The report template ID is the value associated with the run_temp parameter. This setting will enable the script to generate reports against manual scans instead of downloading complete scan data (which can be hundreds of megabytes on large scans).
+This setting will enable the script to generate reports instead of providing XML files manually.
 
 
 
