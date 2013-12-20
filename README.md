@@ -4,7 +4,7 @@ qualysguard_remediation_ignore_non-running_kernels
 Mark QualysGuard remediation tickets ignored that are linked to vulnerabilities from non-running kernels.
 
 Instructions
-=====
+============
 
 Python 2.6+ script proof of concept that will take in 2 Qualys XML vulnerability scan reports. The two XML vulnerability scan reports input parameters are (order does not matter):
 
@@ -16,6 +16,14 @@ The script then extracts the remediation tickets numbers for vulnerabilities tha
 The script then prints out the ticket numbers to a file: inactive_kernel_ticket_numbers_DATE_TIME.txt
 
 If the mark_remediation_tickets_resolved_ignore parameter is enabled, the script will programmatically mark those tickets associated with non-running kernels ignored with a comment COMMENT parameter.
+
+This report_template ID should be inputted in the all_vulns_template_id & exclude_non_running_kernel_vulns_report_template_id parameters. You can find the report template ID by viewing the report template info: VM > Reports > Templates > Dropdown next to report template > Info > General Information
+
+![ScreenShot](https://raw.github.com/paragbaxi/qualysguard_vm_scan_trend/master/images/screenshot-report-template-id.png)
+
+The report template ID is the value associated with the run_temp parameter. This setting will enable the script to generate reports against manual scans instead of downloading complete scan data (which can be hundreds of megabytes on large scans).
+
+
 
 Workflow
 ========
