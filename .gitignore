@@ -39,3 +39,5 @@ nosetests.xml
 
 # Test output
 non*.txt
+log/
+*.xml
