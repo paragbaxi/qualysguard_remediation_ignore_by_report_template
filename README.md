@@ -17,8 +17,15 @@ The script then prints out the ticket numbers to a file: inactive_kernel_ticket_
 
 If the mark_remediation_tickets_resolved_ignore parameter is enabled, the script will programmatically mark those tickets associated with non-running kernels ignored with a comment COMMENT parameter.
 
-How to have script run reports
-------------------------------
+Configure report templates
+--------------------------
+
+The script can programmatically fetch the vuln data to enable this to be fully automated.
+
+- The all_vulns_template_id should not exclude vulnerabilities on non-running kernels.
+- The exclude_non_running_kernel_vulns_report_template_id should exclude vulnerabilities on non-running kernels, like screenshot below.
+
+![ScreenShot](https://raw.github.com/paragbaxi/qualysguard_remediation_ignore_non-running_kernels/master/images/screenshot-exclude-non-running kernels.png)
 
 This report_template ID should be inputted in the all_vulns_template_id & exclude_non_running_kernel_vulns_report_template_id parameters. You can find the report template ID by viewing the report template info: VM > Reports > Templates > Dropdown next to report template > Info > General Information
 
