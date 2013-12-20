@@ -37,28 +37,47 @@ Usage
 =====
 
 	usage: qualysguard_remediation_ignore_non-running_kernels.py
-	       [-h] [-A ALL_VULNS_XML] [-c COMMENT]
-	       [-E EXCLUDE_NON_RUNNING_KERNEL_VULNS_XML] [-x] [--config CONFIG]
+	       [-h] [-a ALL_VULNS_TEMPLATE_ID] [-A ALL_VULNS_XML] [-c COMMENT]
+	       [-e EXCLUDE_NON_RUNNING_KERNEL_VULNS_REPORT_TEMPLATE_ID]
+	       [-E EXCLUDE_NON_RUNNING_KERNEL_VULNS_XML] [-r REOPEN_IGNORED_DAYS]
+	       [-t TITLE] [-v] [-w] [-x] [--config CONFIG]
 	
-	Mark QualysGuard remediation tickets ignored that are linked to
+	Mark QualysGuard remediation tickets Closed/Ignored that are linked to
 	vulnerabilities from non-running kernels.
 	
 	optional arguments:
 	  -h, --help            show this help message and exit
+	  -a ALL_VULNS_TEMPLATE_ID, --all_vulns_template_id ALL_VULNS_TEMPLATE_ID
+	                        Report template ID that displays all vulnerabilities.
 	  -A ALL_VULNS_XML, --all_vulns_xml ALL_VULNS_XML
 	                        XML report that displays all vulnerabilities.
 	                        Supercedes all_vulns_template_id.
 	  -c COMMENT, --comment COMMENT
 	                        Comment to include on remediation ticket. (Default =
 	                        Programmatically marked vulnerability on non-running
-	                        kernel ignored.)
+	                        kernel Closed/Ignored.)
+	  -e EXCLUDE_NON_RUNNING_KERNEL_VULNS_REPORT_TEMPLATE_ID, --exclude_non_running_kernel_vulns_report_template_id EXCLUDE_NON_RUNNING_KERNEL_VULNS_REPORT_TEMPLATE_ID
+	                        Report template ID that excludes non-running kernel
+	                        vulnerabilities.
 	  -E EXCLUDE_NON_RUNNING_KERNEL_VULNS_XML, --exclude_non_running_kernel_vulns_xml EXCLUDE_NON_RUNNING_KERNEL_VULNS_XML
 	                        XML report that excludes non-running kernel
 	                        vulnerabilities. Supercedes
 	                        exclude_non_running_kernel_vulns_report_template_id.
+	  -r REOPEN_IGNORED_DAYS, --reopen_ignored_days REOPEN_IGNORED_DAYS
+	                        Used to reopen Closed/Ignored tickets in a set number
+	                        of days. Specify the due date in N days, where N is a
+	                        number of days from today.
+	  -t TITLE, --title TITLE
+	                        Title of report to launch. (Default: Programmatically
+	                        mark non-running kernel remediation tickets
+	                        Closed/Ignored.
+	  -v, --verbose         Outputs additional information to log.
+	  -w, --write_remediation_ticket_numbers_to_file
+	                        Outputs remediation ticket numbers to file. (Default: 
+	                        Enabled.)
 	  -x, --mark_remediation_tickets_resolved_ignore
-	                        Automatically mark remediation tickets ignored that
-	                        are linked to vulnerabilities from non-running
+	                        Automatically mark remediation tickets Closed/Ignored
+	                        that are linked to vulnerabilities from non-running
 	                        kernels.
 	  --config CONFIG       Configuration for Qualys connector.
 
