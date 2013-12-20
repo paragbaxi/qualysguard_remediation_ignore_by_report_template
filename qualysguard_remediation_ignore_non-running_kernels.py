@@ -125,7 +125,8 @@ logger_console.setLevel(logging.ERROR)
 logger_console.setFormatter(logging.Formatter('%(name)-12s: %(levelname)-8s %(lineno)d %(message)s'))
 # Add the handlers to the loggers
 logger.addHandler(logger_file)
-logger.addHandler(logger_console)
+if c_args.verbose:
+    logger.addHandler(logger_console)
 # logger_qc.addHandler(logger_file)
 # logger_qc.addHandler(logger_console)
 # Validate arguments.
