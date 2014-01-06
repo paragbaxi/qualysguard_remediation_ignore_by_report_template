@@ -37,11 +37,11 @@ def load_scan(report_template, report_title):
     logger.debug('report_id: %s' % (report_id))
     # Wait for report to finish spooling.
     # Time in seconds to wait between checks.
-    POLLING_DELAY = 30
+    POLLING_DELAY = 300
     # Time in seconds to wait before checking.
-    STARTUP_DELAY = 30
+    STARTUP_DELAY = 180
     # Maximum number of times to check for report.  About 10 minutes.
-    MAX_CHECKS = 10
+    MAX_CHECKS = 240
     print 'Report sent to spooler. Checking for report in %s seconds.' % (STARTUP_DELAY)
     time.sleep(STARTUP_DELAY)
     for n in range(0, MAX_CHECKS):
