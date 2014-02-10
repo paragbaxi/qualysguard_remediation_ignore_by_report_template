@@ -1,4 +1,4 @@
-qualysguard_remediation_ignore_non-running_kernels
+qualysguard_remediation_ignore_by_report_template
 ==================================================
 
 Mark QualysGuard remediation tickets ignored that are linked to vulnerabilities from non-running kernels.
@@ -9,7 +9,9 @@ Instructions
 Python 2.6+ script proof of concept that will take in 2 Qualys XML vulnerability scan reports. The two XML vulnerability scan reports input parameters are (order does not matter):
 
 - All vulns.
-- All vulns with option to ignore inactive kernel vulnerabilities.
+- All vulns with option to ignore any kind of vulnerabilities.
+
+The following example is for ignoring non-running kernels:
 
 The script then extracts the remediation tickets numbers for vulnerabilities that were discovered on an inactive kernel. Note that this is on a per host level, not at a per QID level.
 
