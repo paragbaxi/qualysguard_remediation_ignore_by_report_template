@@ -9,7 +9,7 @@ Instructions
 Python 2.6+ script proof of concept that will take in 2 Qualys XML vulnerability scan reports. The two XML vulnerability scan reports input parameters are (order does not matter):
 
 - All vulns.
-- All vulns with option to ignore any kind of vulnerabilities.
+- All vulns with option to ignore any kind of vulnerability.
 
 The following example is for ignoring non-running kernels:
 
